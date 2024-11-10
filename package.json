@@ -1,0 +1,38 @@
+{
+  "name": "lit-select",
+  "description": "Webcomponent lit-select following open-wc recommendations",
+  "license": "MIT",
+  "author": "lit-select",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lit-select.js": "./lit-select.js"
+  },
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server",
+    "test": "web-test-runner --coverage",
+    "test:watch": "web-test-runner --watch"
+  },
+  "dependencies": {
+    "lit": "^3.1.4"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.3",
+    "@open-wc/testing": "^4.0.0",
+    "@web/dev-server": "^0.4.6",
+    "@web/test-runner": "^0.18.2",
+    "eslint": "^8.57.0",
+    "standard": "^17.1.2"
+  },
+  "customElements": "custom-elements.json",
+  "eslintConfig": {
+    "extends": [
+      "@open-wc",
+      "standard"
+    ]
+  }
+}
