@@ -2,7 +2,7 @@ import { html, css, LitElement } from 'lit'
 
 export class LitSelect extends LitElement {
   static styles = css`
-      .dropdown-container {
+      .select-container {
       position: relative;
       font-family: Arial, sans-serif;
       width: 100%;
@@ -14,7 +14,7 @@ export class LitSelect extends LitElement {
       color: #333;
     }
 
-    .dropdown-trigger {
+    .select-trigger {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -28,17 +28,17 @@ export class LitSelect extends LitElement {
       transition: border-color 0.3s, background-color 0.3s ease;
     }
 
-    .dropdown-trigger:hover {
+    .select-trigger:hover {
       background-color: #f0f0f0;
       border-color: #007bff;
     }
 
-    .dropdown-trigger:focus {
+    .select-trigger:focus {
       outline: none;
       border-color: #007bff;
     }
 
-    .dropdown-menu {
+    .select-menu {
       display: none;
       position: absolute;
       top: 100%;
@@ -52,18 +52,18 @@ export class LitSelect extends LitElement {
       margin-top: 4px;
     }
 
-    .dropdown-menu.is-active {
+    .select-menu.is-active {
       display: block;
     }
 
-    .dropdown-item {
+    .select-item {
       padding: 8px 12px;
       cursor: pointer;
       color: #333;
       transition: background-color 0.3s ease;
     }
 
-    .dropdown-item:hover {
+    .select-item:hover {
       background-color: #f0f0f0;
     }
 
@@ -124,16 +124,16 @@ export class LitSelect extends LitElement {
 
   render () {
     return html`
-      <div class="dropdown-container">
-        <div class="dropdown">
-          <div class="dropdown-trigger" @click="${this.toggleMenu}">
+      <div class="select-container">
+        <div class="select">
+          <div class="select-trigger" @click="${this.toggleMenu}">
             <span>${this.selected || this.label}</span>
             ${this.renderChevronIcon()}
           </div>
-          <div class="dropdown-menu ${this.closed ? '' : 'is-active'}">
+          <div class="select-menu ${this.closed ? '' : 'is-active'}">
             ${this.options.map(
               (option) => html`
-                <div class="dropdown-item" @click="${() => this.handleOptionSelect(option)}">
+                <div class="select-item" @click="${() => this.handleOptionSelect(option)}">
                   ${option}
                 </div>
               `
