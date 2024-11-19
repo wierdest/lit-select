@@ -34,5 +34,18 @@
       "@open-wc",
       "standard"
     ]
+  },
+  "standard": {
+    "globals": [
+      "customElements",
+      "WebFont",
+      "HTMLElement",
+      "describe",
+      "beforeEach",
+      "it",
+      "expect",
+      "before",
+      "after"
+    ]
   }
 }
