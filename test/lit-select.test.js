@@ -14,4 +14,11 @@ describe('LitSelect', () => {
   it('should exist', () => {
     expect(el).to.exist
   })
+
+  it('should receive new options to populate select', async () => {
+    const newOptions = ['kiko', 'kikoo', 'ra', 'raa', 'raaa']
+    const override = await fixture(html`<lit-select .options=${newOptions}></lit-select>`)
+    expect(override.options).to.deep.equal(newOptions)
+  })
+
 })
