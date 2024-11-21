@@ -21,4 +21,15 @@ describe('LitSelect', () => {
     expect(override.options).to.deep.equal(newOptions)
   })
 
+  it('should toggle the menu on click', () => {
+    expect(el.closed).to.equal(true)
+    el.toggleMenu()
+    expect(el.closed).to.equal(false)
+  })
+
+  it('should select an option using handleOptionSelect, close the menu', () => {
+    el.handleOptionSelect('Aracaju')
+    expect(el.selected).to.equal('Aracaju')
+    expect(el.closed).to.equal(true)
+  })
 })
